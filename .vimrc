@@ -21,4 +21,6 @@ set shiftwidth=4
 set paste
 set expandtab
 
+set mouse-=a
+
 colorscheme atom-dark-256
