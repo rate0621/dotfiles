@@ -1,3 +1,5 @@
+eval $(/opt/homebrew/bin/brew shellenv)
+
 # 補完機能
 autoload -U compinit
 compinit
@@ -9,9 +11,6 @@ PROMPT='%m:%c %n$ '
 HISTFILE=~/.zsh_history
 HISTSIZE=6000000
 SAVEHIST=6000000
-setopt hist_ignore_dups     # ignore duplication command history list
-#setopt share_history       # share command history data
-setopt no_share_history
 
 # コマンド履歴検索
 autoload history-search-end
@@ -28,12 +27,8 @@ if [ -f ~/.workrc ]; then
         . ~/.workrc
 fi
 
-# pyenv関連
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-eval "$(pyenv virtualenv-init -)"
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt no_share_history
 
 # tmux起動
 tmux
