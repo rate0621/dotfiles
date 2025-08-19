@@ -107,8 +107,8 @@ export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@1.1/lib/pkgconfig"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
 
-## rbenv関連
-eval "$(rbenv init -)"
+### rbenv関連
+#eval "$(rbenv init -)"
 
 
 # My alias
@@ -139,3 +139,6 @@ eval "$(pyenv virtualenv-init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## poetry用
+export PATH="/Users/i.reito.ebina/.local/bin:$PATH"
