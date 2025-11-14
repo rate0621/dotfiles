@@ -113,6 +113,9 @@ export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include"
 
 # My alias
 alias gs='git status'
+alias e='nvim .'
+alias vi='nvim'
+alias pwd='pwd | tr -d "\n" | tee >(pbcopy)'
 
 ## pyenv関連
 export PYENV_ROOT="$HOME/.pyenv"
@@ -142,3 +145,14 @@ export NVM_DIR="$HOME/.nvm"
 
 ## poetry用
 export PATH="/Users/i.reito.ebina/.local/bin:$PATH"
+
+
+## ディレクトリ移動ごとにタブ名を更新
+#precmd() {
+#  echo -ne "\033]0;${PWD:t}\007"
+#}
+
+alias codex='script -q /dev/null codex'
+
+
+export TERM=xterm-256color
