@@ -68,7 +68,11 @@ ln -sf ~/dotfiles/.zprofile ~/.zprofile
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-echo "  .vimrc, .vim, .zprofile, .zshrc, .tmux.conf: リンク完了"
+# neovim設定
+mkdir -p ~/.config/nvim
+ln -sf ~/dotfiles/.config/nvim/init.vim ~/.config/nvim/init.vim
+
+echo "  .vimrc, .vim, .zprofile, .zshrc, .tmux.conf, nvim/init.vim: リンク完了"
 
 # ----------------------------------------
 # Karabiner-Elements設定
@@ -90,6 +94,30 @@ if [ -d "/Applications/BetterTouchTool.app" ]; then
 else
     echo "BetterTouchTool: 未インストール（スキップ）"
 fi
+
+# ----------------------------------------
+# Claude Code設定
+# ----------------------------------------
+echo "Claude Code設定をリンクしています..."
+
+# ~/.claudeディレクトリがなければ作成
+mkdir -p ~/.claude
+
+# 設定ファイルのリンク
+ln -sf ~/dotfiles/.claude/CLAUDE.md ~/.claude/CLAUDE.md
+ln -sf ~/dotfiles/.claude/settings.json ~/.claude/settings.json
+
+# ディレクトリのリンク（既存があれば削除してからリンク）
+for dir in rules agents commands skills; do
+    if [ -L ~/.claude/$dir ]; then
+        rm ~/.claude/$dir
+    elif [ -d ~/.claude/$dir ]; then
+        rm -rf ~/.claude/$dir
+    fi
+    ln -sf ~/dotfiles/.claude/$dir ~/.claude/$dir
+done
+
+echo "  CLAUDE.md, settings.json, rules/, agents/, commands/, skills/: リンク完了"
 
 # ----------------------------------------
 # 完了

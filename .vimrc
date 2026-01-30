@@ -18,9 +18,14 @@ set history=2000
 set autoindent
 set tabstop=4
 set shiftwidth=4
-set pastetoggle=<F2>
+" neovimではpastetoggleが不要（自動検出される）
+if !has('nvim')
+  set pastetoggle=<F2>
+endif
 set expandtab
 
-set mouse-=a
+set mouse=
 
-colorscheme atom-dark-256
+" カラースキーム
+set background=dark
+colorscheme gruvbox

@@ -13,6 +13,7 @@ macOS用の個人設定ファイル集
 | `colors/` | Vimカラースキーム |
 | `others/karabiner.json` | Karabiner-Elements設定（CapsLock→Control等） |
 | `others/Default.bttpreset` | BetterTouchTool設定 |
+| `.claude/` | Claude Code設定（下記参照） |
 
 ## セットアップ
 
@@ -31,6 +32,7 @@ init.shは以下を自動で行います：
 - oh-my-zshのインストール
 - 設定ファイルへのシンボリックリンク作成
 - Karabiner設定のリンク（インストール済みの場合）
+- Claude Code設定のリンク
 
 ## セットアップ後
 
@@ -62,3 +64,16 @@ nvm use --lts
 
 - [Karabiner-Elements](https://karabiner-elements.pqrs.org/) - キーボードカスタマイズ
 - [BetterTouchTool](https://folivora.ai/) - トラックパッド/キーボードカスタマイズ
+
+## Claude Code設定
+
+`.claude/`ディレクトリには以下のClaude Code設定が含まれます：
+
+| ファイル/ディレクトリ | 説明 |
+|----------------------|------|
+| `CLAUDE.md` | グローバル指示（言語設定等） |
+| `settings.json` | グローバル設定 |
+| `rules/` | ルールファイル（コーディングスタイル、セキュリティ等） |
+| `agents/` | エージェント定義（planner、code-reviewer等） |
+| `commands/` | スラッシュコマンド（/plan、/tdd等） |
+| `skills/` | スキル定義（セキュリティレビュー、TDDワークフロー等） |
