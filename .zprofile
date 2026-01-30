@@ -27,8 +27,7 @@ if [ -f ~/.workrc ]; then
         . ~/.workrc
 fi
 
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt no_share_history
-
-# tmux起動
-tmux
+# tmux起動（ネスト防止）
+if [[ -z "$TMUX" ]]; then
+    tmux
+fi

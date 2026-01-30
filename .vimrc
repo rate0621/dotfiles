@@ -18,7 +18,7 @@ set history=2000
 set autoindent
 set tabstop=4
 set shiftwidth=4
-set paste
+set pastetoggle=<F2>
 set expandtab
 
 set mouse-=a

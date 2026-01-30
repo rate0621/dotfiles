@@ -1,1 +1,6 @@
 .DS_Store
+*.swp
+*.swo
+*~
+.netrwhist
+.oh-my-zsh/
